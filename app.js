@@ -41,6 +41,11 @@ function runDetection(){
     model.detect(video)
         .then(predictions => {
             console.log(predictions);
+            //to show the box around your tracked hand un comment the next line 
+            //model.renderPredictions(predictions, canvas, context, video);
+            if(predictions.length>0){
+                audio.play();
+            }
         });
 }
 
